@@ -74,6 +74,27 @@ public static partial class GFunc
         return targetObj_;
     }       // GetRootObj()
 
+    //!특정 오브젝트의 자식 오브젝트를 모두 리턴하는 함수
+    public static List<GameObject> GetChildrenObjs(this GameObject targetObj_)
+    {
+        List<GameObject> objs = new List<GameObject>();
+        GameObject searchTarget = default;
+        Debug.Log(targetObj_);
+
+        for(int i = 0; i < targetObj_.transform.childCount; i++)
+        {
+            searchTarget = targetObj_.transform.GetChild(i).gameObject;
+            objs.Add(searchTarget);
+        }
+
+        if (objs.IsValid()) { return objs; }
+        else 
+        { 
+            return default(List<GameObject>); 
+        }
+
+    }
+
     //! RectTransform 을 찾아서 리턴하는 함수
     public static RectTransform GetRect(this GameObject obj_)
     {
@@ -93,9 +114,21 @@ public static partial class GFunc
         return activeScene_;
     }       // GetActiveScene()
 
+
+    #region Object transform control
+
+    //오브젝트의 로컬 포지션을 변경하는 함수
+    public static void SetLocalScale(this GameObject obj_, Vector3 localScale_)
+    {
+        obj_.transform.localScale = localScale_;
+    }
+    //! 오브젝트의 로컬 포지션을 변경하는 함수 
+    public static void SetLocalPos(this GameObject obj_,Vector3 localPos_)
+    {
+        obj_.transform.localPosition = localPos_;
+    }
     //! 오브젝트의 로컬 포지션을 변경하는 함수
-    public static void SetLocalPos(this GameObject obj_, 
-        float x, float y, float z)
+    public static void SetLocalPos(this GameObject obj_, float x, float y, float z)
     {
         obj_.transform.localPosition = new Vector3(x, y, z);
     }       // SetLocalPos()
@@ -127,7 +160,7 @@ public static partial class GFunc
     {
         transform_.Translate(moveVector.x, moveVector.y, 0f);
     }       // Translate()
-
+    #endregion Object transform control
     //! 컴포넌트 가져오는 함수
     public static T GetComponentMust<T>(this GameObject obj) where T : Component
     {
@@ -146,4 +179,51 @@ public static partial class GFunc
         GameObject newObj = new GameObject(objName);
         return newObj.AddComponent<T>();
     }       // CreateObj()
+
+    //오브젝트를 파괴하는 함수
+    public static void DestroyObj(this GameObject obj_, float delay = 0.0f)
+    {
+        Object.Destroy(obj_, delay);
+    }
+
+    //!로컬 포지션을 기준으로 두 타일 오브젝트의 위치를 비교하는 함수
+    public static int CompareTileObjToLocalPos2D(GameObject firstObj, GameObject secondObj)
+    {
+        Vector2 firstPos = firstObj.transform.localPosition;
+        Vector2 secondPos = secondObj.transform.localPosition;
+
+        int compareResult = 0;
+        
+        if(firstPos.y.IsEquals(secondPos.y)) 
+        {
+            if (firstPos.x.IsEquals(secondPos.x))
+            {
+                compareResult = 0;
+            }
+            else
+            {
+                if(firstPos.x < secondPos.x)
+                {
+                    compareResult = -1;
+                }
+                else
+                {
+                    compareResult = 1;
+                }
+            }
+            return compareResult;
+        }//y 포지션이 같은 경우
+        
+        // y 포지션이 다른 경우.
+        if (firstPos.y < secondPos.y) 
+        { 
+            compareResult= -1; 
+        }
+        else 
+        { 
+            compareResult = 1; 
+        }
+      
+        return compareResult;
+    }
 }
