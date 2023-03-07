@@ -5,7 +5,7 @@ using UnityEngine;
 public class ResManager : GSingleton<ResManager>
 {
     private const string TERRAIN_PREFAB_PATH = "Prefabs/ObjectTiles/Terrains";
-    private const string OBSTACLE_PREFAB_PATH = "Prefabs/ObjectTiles/Obstacle";
+    private const string OBSTACLE_PREFAB_PATH = "Prefabs/ObjectTiles/Obstacles";
 
 
     public Dictionary<string, GameObject> terrainPrefabs = default;
