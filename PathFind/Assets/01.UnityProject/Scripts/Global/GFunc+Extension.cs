@@ -58,4 +58,27 @@ public static partial class GFunc
     {
         return (minInclude <= targetValue && targetValue < maxInclude);
     }
+
+
+    #region AstarFunction
+    public static AstarNode FindNode(this List<AstarNode> nodeList, AstarNode compareNode)
+    {
+        if (nodeList.IsValid() == false) { return default; }
+
+        AstarNode resultNode = default;
+        foreach (var node_ in nodeList)
+        {
+            if (node_.terrain == default || node_.terrain == null) { continue; }
+            else if (compareNode.terrain == default || compareNode.terrain == null) { continue; }
+
+            if (node_.terrain.TileIdx1D.Equals(compareNode.terrain.TileIdx1D))
+            {
+                resultNode = node_;
+            }
+            else { continue; }
+        }
+        return resultNode;
+
+    }
+    #endregion
 }

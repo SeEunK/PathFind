@@ -16,6 +16,9 @@ public class MapBoard : MonoBehaviour
     {
         // 메니저를 모두 초기화 한다.
         ResManager.Instance.Create();
+        PathFinder.Instance.Create();
+        // pathfinder 에 맵 보드 컨트롤러를 캐싱한다.
+        PathFinder.Instance.mapBoard= this;
 
         //맵의 지형을 초기화하여 배치한다.
         terrainMap = gameObject.FindChildComponent<TerrainMap>(TERRAIN_MAP_OBJECT_NAME);

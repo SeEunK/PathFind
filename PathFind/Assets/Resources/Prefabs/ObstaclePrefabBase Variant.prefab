@@ -11,9 +11,17 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: a823c80cf65421a4f956d67b36aa0398, type: 3}
+    - target: {fileID: 1910323384082732193, guid: ab2e6fd2cc592ca498ad11a8ff9442c9, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1910323384082732193, guid: ab2e6fd2cc592ca498ad11a8ff9442c9, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1577329469
+      objectReference: {fileID: 0}
     - target: {fileID: 1910323385201657394, guid: ab2e6fd2cc592ca498ad11a8ff9442c9, type: 3}
       propertyPath: m_Name
-      value: ObstaclePrefabBase Variant
+      value: Obstacle_PlainCastle
       objectReference: {fileID: 0}
     - target: {fileID: 1910323385201657395, guid: ab2e6fd2cc592ca498ad11a8ff9442c9, type: 3}
       propertyPath: m_Pivot.x
@@ -53,11 +61,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1910323385201657395, guid: ab2e6fd2cc592ca498ad11a8ff9442c9, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.007
       objectReference: {fileID: 0}
     - target: {fileID: 1910323385201657395, guid: ab2e6fd2cc592ca498ad11a8ff9442c9, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.007
       objectReference: {fileID: 0}
     - target: {fileID: 1910323385201657395, guid: ab2e6fd2cc592ca498ad11a8ff9442c9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -89,11 +97,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1910323385201657395, guid: ab2e6fd2cc592ca498ad11a8ff9442c9, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -2.7000008
       objectReference: {fileID: 0}
     - target: {fileID: 1910323385201657395, guid: ab2e6fd2cc592ca498ad11a8ff9442c9, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 2.2500007
       objectReference: {fileID: 0}
     - target: {fileID: 1910323385201657395, guid: ab2e6fd2cc592ca498ad11a8ff9442c9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -111,6 +119,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: f3c31354061a0d842a32bad5c95892e0, type: 3}
+    - target: {fileID: 1910323385667534292, guid: ab2e6fd2cc592ca498ad11a8ff9442c9, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1910323385667534292, guid: ab2e6fd2cc592ca498ad11a8ff9442c9, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 2086433311
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7958520970668175935, guid: ab2e6fd2cc592ca498ad11a8ff9442c9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ab2e6fd2cc592ca498ad11a8ff9442c9, type: 3}

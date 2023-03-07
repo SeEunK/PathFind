@@ -117,6 +117,7 @@ public class ObstacleMap : TileMapController
             tempChangeTile = default;
         }
 
+        UpdateSourceDestinationToPathFinder();
     }
 
     // 지물을 추가한다.
@@ -126,5 +127,10 @@ public class ObstacleMap : TileMapController
         allTileObjs.Add(obj);
     }
 
-    //
+    // path finder 에 출발지와 목적지 설정한다.
+    public void UpdateSourceDestinationToPathFinder()
+    {
+        PathFinder.Instance.sourceObj = castleObjs[0];
+        PathFinder.Instance.destinationObj = castleObjs[1];
+    }
 }

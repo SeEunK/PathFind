@@ -44,3 +44,9 @@ TagManager:
   - name: Terrains
     uniqueID: 2086433311
     locked: 0
+  - name: Castle
+    uniqueID: 1577329469
+    locked: 0
+  - name: Front
+    uniqueID: 4005912811
+    locked: 0
